@@ -16,14 +16,14 @@ def get_pokemon(name):
     print('unexpected error')
     
 
-with open (file_path, 'x') as file:
-   
-    for num in range(10000):
+with open (file_path, 'w') as file:
+    file.write('Id, Name, Type1, Height, Weight\n')
+    for num in range(1, 160):
 
         pikachu = get_pokemon(num)
 
         if pikachu:
-            file.write(f'{pikachu['name']}, {pikachu['id']}, {pikachu['height']}cm, {pikachu['weight']}kg\n')
+            file.write(f'{pikachu['id']}, {pikachu['name']},{pikachu['types'][0]['type']['name']}, {pikachu['height']}cm, {pikachu['weight']}kg\n')
 #            print(f'{pikachu['name']}, {pikachu['id']}, {pikachu['height']}cm, {pikachu['weight']}kg')
 
 
